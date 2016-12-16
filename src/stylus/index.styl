@@ -1,0 +1,256 @@
+@import 'nib'
+@import 'fonts'
+@import 'animation'
+@import 'baddies'
+*{
+  font-family: silkscreenbold;
+  outline     : none;
+}
+
+html{ height: 100%; }
+body{
+  min-height          : 100%;
+  background-position : center, center;
+  background-image    : url("../assets/bg.png");}
+
+strong{
+  color: red;
+}
+
+#main {
+  text-align  : center;
+  padding-top : 25px;
+}
+
+.screen {
+  width : inherit;
+  height: inherit;
+  .ship .laser{
+    display: none;
+    height: 100%;
+    position: absolute;
+    height: 500px;
+    background: rgba(180, 0, 0, 0.51);
+    width: 1px;
+    bottom: 20px;
+    left: 10px;
+  }
+}
+
+.game{
+  position    : relative;
+  width       : 500px;
+  height      : 500px;
+  background  : black;
+  overflow    : hidden;
+  margin      : auto;
+  box-shadow  : 2px 5px 20px rgba(0,0,0,.7);
+  > div{
+    width : inherit;
+    height: inherit;
+  }
+}
+div:-webkit-full-screen{
+  background: black;
+}
+div:-webkit-full-screen .game {
+  zoom:1.5;
+}
+
+.intro{
+  position: absolute;
+  top     : 0;
+  width   : 100%;
+  color   : white;
+  text-align    : center;
+  text-transform: uppercase;
+  padding-top   : 20%;
+
+  h1, h2{
+    margin:auto;
+  }
+  h2{
+    font-size:80%;
+    margin-top: 20px;
+  }
+  .ship{
+    position    : absolute;
+    top         : 400px;
+    left        : calc(50% + 10px);
+    margin-left : -10px;
+  }
+}
+
+.positionable {
+  position: absolute;
+  top     : 0;
+  left    : 0;
+}
+.ship{
+  width           : 20px;
+  height          : 23px;
+  background-image: url("../assets/spaceShip.png");
+  z-index         : 3;
+}
+.particle{
+  width     : 5px;
+  height    : 5px;
+  background: red;
+  &.explosion {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    animation: explosion 300ms ease-out;
+    animation-fill-mode:forwards;
+  }
+}
+.rocket-launcher {
+  z-index: 1;
+  .rocket {
+    width : 5px;
+    height: 10px;
+    background:white;
+  }
+  .n-rocket {
+    width : 5px;
+    height: 10px;
+    background:white;
+  }
+  .l-rocket {
+    width : 10px;
+    height: 10px;
+    background:white;
+  }
+}
+
+.flash {
+  background-image : none;
+  background:white;
+}
+
+.hud {
+  .points {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    text-align:right;
+    color:white;
+    font-size: 150%;
+  }
+  .day {
+    position: absolute;
+    top: 30px;
+    right: 5px;
+    text-align: right;
+    font-size: 110%;
+    color:white;
+  }
+  .life{
+    position: absolute;
+    top: 0;
+    left: 0;
+    .ship{
+      display:inline-block;
+      margin: 5px;
+    }
+  }
+  .gauge{
+    top: 40px;
+    left: 5px;
+    &.warning{
+      border: 1px solid red;
+      .label{
+        animation: mediumBlink 500ms infinite;
+      }
+    }
+  }
+}
+.gauge{
+  position: absolute;
+  height: 20px;
+  border: 1px solid #fff;
+  .label{
+    color: #fff;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    font-size: 10px;
+  }
+  .value{
+    height: 15px;
+    background: #00f;
+    margin: 2px;
+  }
+}
+
+.button{
+  border: 4px solid red;
+  padding: 3px;
+}
+
+.perfect{
+  font-size: 120%;
+  color: red;
+}
+
+.fx {
+  position: absolute;
+  top: 0;
+  width : 100%;
+  height: 100%;
+  &.flash {
+    background:white;
+  }
+  &.alert {
+    box-sizing: border-box;
+    border: 10px solid red;
+    animation: simpleFadeOut 300ms forwards;
+  }
+
+  .starfield {
+    position: absolute;
+    top     : -1500px;
+    left    : 0;
+    &.stars {
+      width: 100%;
+      height: 2000px;
+      background-repeat: repeat-y;
+    }
+    &.l-1 {
+      animation: vertical-scroll 10s linear infinite;
+    }
+    &.l-2 {
+      animation: vertical-scroll 15s linear infinite;
+    }
+    &.l-3 {
+      animation: vertical-scroll 20s linear infinite;
+    }
+    &.reversed{
+      &.l-1 {
+        animation: vertical-scroll-reversed 2s linear infinite;
+      }
+      &.l-2 {
+        animation: vertical-scroll-reversed 4s linear infinite;
+      }
+      &.l-3 {
+        animation: vertical-scroll-reversed 6s linear infinite;
+      }
+    }
+  }
+}
+
+.kill-list {
+  text-transform : none;
+  font-size: 20px;
+  ul {
+    padding: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+.score{
+  text-transform: none;
+  font-size: 20px;
+}

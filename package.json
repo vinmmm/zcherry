@@ -1,0 +1,32 @@
+{
+  "name": "cherrystreetattack",
+  "version": "0.0.1",
+  "main": "Gruntfile.js",
+  "scripts": {
+  "start": "grunt connect"
+},
+  "devDependencies": {
+    "browserify": "*",
+    "grunt": "*",
+    "grunt-browserify": "*",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-stylus": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-react": "*"
+  },
+  "dependencies": {
+    "envify": "^3.2.0",
+    "grunt": "1.0.1",
+    "grunt-cli": "1.2.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-uglify": "2.0.0",
+    "howler": "^1.1.25",
+    "react": "^0.12.1",
+    "underscore": "*"
+  },
+
+  "engines": {
+    "node": "4.4.3"
+  }
+}
