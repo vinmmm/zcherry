@@ -45,7 +45,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('default', ['build', 'watch', 'connect']);
+  grunt.registerTask('default', ['build', 'connect']);
   grunt.registerTask('build', ['browserify:app', 'stylus']);
   //grunt.registerTask('serve', ['connect:server']);
 
