@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "Gruntfile.js",
   "scripts": {
-  "start": "grunt connect"
+  "start": "grunt default"
 },
   "devDependencies": {
     "browserify": "*",

@@ -33,7 +33,7 @@ module.exports = function (grunt) {
        
         keepalive: true,
         open: {
-          port: 9000
+          target: 'http://localhost:9000'
         }
       }
     }
@@ -49,9 +49,5 @@ module.exports = function (grunt) {
   grunt.registerTask('build', ['browserify:app', 'stylus']);
   //grunt.registerTask('serve', ['connect:server']);
 
-  // Load the plugin that provides the "uglify" task.
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-
-  // Default task(s).
-  grunt.registerTask('default', ['uglify']);
+  
 };
