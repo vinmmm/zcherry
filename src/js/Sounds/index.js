@@ -18,7 +18,7 @@ var sprites = new Howl({
 });
 
 var music = new Howl({
-  urls: ['assets/song1.ogg'],
+  urls: ['assets/ogre.mp3'],
   loop: true,
   autoplay: true,
   volume: 0.8
